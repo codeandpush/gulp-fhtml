@@ -1,0 +1,19 @@
+<div loc="b.0">
+
+    <p>I'm the first element in the body!</p>
+</div>
+
+
+<div loc="b.1">
+
+    <p>I'm the second element in the body</p>
+</div>
+
+
+
+
+<div loc="b.last.0">
+    <p>Hello I am in a div which is in body</p>
+</div>
+
+
