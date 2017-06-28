@@ -50,7 +50,7 @@ function serializeNode(node) {
 }
 
 function getLocs(doc, result) {
-    result = result || {}
+    result = result || []
     
     let attrs = doc.attrs
     if (_.isArray(attrs) && !_.isEmpty(attrs)) {
@@ -59,7 +59,7 @@ function getLocs(doc, result) {
                 let val = ['b.', 'h.'].includes(attr.value.substring(0, 2)) ? attr.value : 'b.' + attr.value
                 
                 doc.childNodes = _.filter(doc.childNodes, (n) => !(n.nodeName === '#text' && n.value.trim() === ''))
-                result[val] = doc//.html
+                result.push([val, doc])//.html
                 break
             }
         }
@@ -68,7 +68,7 @@ function getLocs(doc, result) {
     if (!_.isArray(doc.childNodes)) return result
     
     for (let childNode of doc.childNodes) {
-        result = _.merge(result, getLocs(childNode))
+        result = _.concat(result, getLocs(childNode))
     }
     
     return result
@@ -109,7 +109,7 @@ function toIndex(char) {
 }
 
 function buildHtml(locMap) {
-    let locArr = _.toPairs(locMap)
+    let locArr = locMap
     let maxKeyLength = 0
     
     let bRoots = locArr.filter(([key, __]) => {
