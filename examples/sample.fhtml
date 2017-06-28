@@ -1,19 +1,63 @@
-<div loc="b.0">
 
-    <p>I'm the first element in the body!</p>
+<script src="//cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js" loc="b.last"></script>
+
+<script loc="b.last">
+    _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" loc="b.last"></script>
+<script loc="b.last" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+<header loc="b.0">
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+
+
+
+        </div><!-- /.container-fluid -->
+    </nav>
+</header>
+
+<div class="navbar-header" loc="b.0.0.0">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">
+        <span class="glyphicon glyphicon glyphicon-tree-deciduous"></span>
+        Edey
+    </a>
 </div>
 
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" loc="b.0.0.1">
+    <ul class="nav navbar-nav">
+        <li class=""><a href="/products">Products</a></li>
+        <li><a href="#">Link</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a class="" href="/login"><strong>Sign in</strong></a></li>
+        <li style="padding-top: 15px;padding-bottom: 15px;"><span class="text-muted" style="padding-top: 15px;padding-bottom: 15px;">or</span></li>
+        <li><a class="" href="/register?source=header-home" ><strong>Sign up</strong></a></li>
+    </ul>
+</div><!-- /.navbar-collapse -->
 
-<div loc="b.1">
+<main class="container" loc="b.1">
+    <div class="jumbotron">
+        <h1>Welcome to Edey Nigeria!</h1>
+        <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+    </div>
+</main>
 
-    <p>I'm the second element in the body</p>
-</div>
 
+<footer loc="b.2">
+    <p class="text-center text-muted">© Copyright 2014 The Awesome People</p>
+</footer>
 
-
-
-<div loc="b.last.0">
-    <p>Hello I am in a div which is in body</p>
-</div>
 
 

@@ -57,6 +57,8 @@ function getLocs(doc, result) {
         for (let attr of attrs) {
             if (attr.name === 'loc') {
                 let val = ['b.', 'h.'].includes(attr.value.substring(0, 2)) ? attr.value : 'b.' + attr.value
+                
+                doc.childNodes = _.filter(doc.childNodes, (n) => !(n.nodeName === '#text' && n.value.trim() === ''))
                 result[val] = doc//.html
                 break
             }
@@ -83,6 +85,7 @@ function charCount(string, char) {
 function setNode(parent, child, keyPath) {
     let finalDest = toIndex(keyPath[0])
     let nodes = parent.childNodes
+    console.log('setting (%s): %s -> %s', keyPath, parent.nodeName, (nodes || []).map((n) => n.nodeName))
     if (keyPath.length === 1) {
         if(finalDest >= nodes.length || finalDest === -1){
             nodes.push(child)
